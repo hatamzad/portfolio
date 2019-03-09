@@ -1,12 +1,12 @@
 <html lang="en">
-<head>
-  {% load staticfiles %}
+  <head>
+    {% load staticfiles %}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
 
-    <title>Amirhossein Hatamzad</title>
+    <title>{{ blog.title }}</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
@@ -45,37 +45,16 @@
 </header>
 
 <main role="main">
+  <div class="container">
 
-  <section class="jumbotron text-center">
-    <div class="container">
-      <h1 class="jumbotron-heading">Hi! I'm Amir</h1>
-      <p class="lead text-muted">hey! my name is Amir and i love to make Django websites it's the thrill of handling requests that the people want!.</p>
-      <p>
-        <a href="mailto:Hatamzad@gmail.com" class="btn btn-primary my-2">Email Me</a>
-      </p>
-      <img src="{% static 'amir.jpg'%}" alt="" width="400" height="400" />
-    </div>
-  </section>
+ <h1 class="text-center pt-3">{{ blog.title }}</h1>
+ <p class="text-center"> {{ blog.pub_date }}</p>
+ <img class="img-fluid" src="{{ blog.image.url }}" alt="" >
+ <br />
+ <br/>
+ <p>{{ blog.body }}</p>
 
-  <div class="album py-5 bg-light">
-    <div class="container">
-
-      <div class="row">
-
-        {% for job in jobs.all %}
-        <div class="col-md-4">
-          <div class="card mb-4 shadow-sm">
-            <img src="{{ job.image.url }}" alt="" width="300" height="300" />
-            <div class="card-body">
-              <p class="card-text">{{ job.summary }}</p>
-            </div>
-          </div>
-        </div>
-        {% endfor %}
-
-      </div>
-    </div>
-  </div>
+<div/>
 
 </main>
 
